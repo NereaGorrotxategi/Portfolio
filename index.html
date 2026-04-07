@@ -122,8 +122,69 @@
       width: 33%;
       border-radius: 6px;
     }
+
+    .habilidades {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .habilidad {
+      background-color: #E1F5EE;
+      color: #0F6E56;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .imagenes-fila3 {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .imagenes-fila3 img {
+      width: 33%;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      cursor: pointer;
+    }
+
+    .overlay img {
+      max-width: 90%;
+      max-height: 90vh;
+      border-radius: 8px;
+    }
   </style>
 </head>
+<div class="overlay" id="overlay" onclick="cerrarImagen()">
+  <img id="imagen-ampliada" src="" alt="">
+</div>
+<script>
+  function abrirImagen(src) {
+    document.getElementById('imagen-ampliada').src = src;
+    document.getElementById('overlay').style.display = 'flex';
+  }
+
+  function cerrarImagen() {
+    document.getElementById('overlay').style.display = 'none';
+  }
+</script>
 
 <body>
   <header>
@@ -147,7 +208,7 @@
       <br>
       <br>
       Busco oportunidad para realizar mi PFM en análisis de datos
-      aplicado a biomedicina — en empresa biotech, salud digital
+      aplicado a biomedicina — en empresa biotech, biopharma, salud digital
       o grupo de investigación.
     </p>
     <!-- párrafo -->
@@ -197,12 +258,32 @@
       <p><strong>Tecnologías:</strong> RStudio</p>
     </div>
     <div class="tarjeta">
+      <h3>Generador automático de informes con IA</h3>
+      <p>Proyecto desarrollado en el IAthon 2026 en equipo. Herramienta que
+        lee un dataset (CSV/Excel) y genera automáticamente un informe con
+        gráficas, tablas y conclusiones usando IA. El informe se puede exportar
+        en PDF, Word o PowerPoint, en español o inglés, con una interfaz
+        interactiva construida en Streamlit.</p>
+      <p><strong>Tecnologías:</strong> Python, Streamlit, OpenAI API, Pandas</p>
+      <div class="imagenes-fila3">
+        <!--<img src="imagenes/Iathon.png"> -->
+        <img src="imagenes/Iathon.png" onclick="abrirImagen(this.src)" style="cursor:pointer;">
+        <img src="imagenes/Iathon2.png">
+        <img src="imagenes/Iathon1.png">
+      </div>
+      <!--<a href="https://github.com/NereaGorrotxategi/Hiper" class="btn-ver" target="_blank">Ver en GitHub →</a>-->
+    </div>
+    <div class="tarjeta">
       <h3> Espectrofotómetro con Arduino</h3>
       <p> Proyecto académico en grupo en el que diseñamos y construimos un espectrofotómetro de bajo coste utilizando
         Arduino, una fuente de luz y un sensor para medir la intensidad de luz transmitida a través de distintas
         disoluciones. Colaboré en el montaje del sistema, en la toma de medidas y en la interpretación básica de los
         resultados, aplicando conceptos de óptica e instrumentación biomédica.</p>
       <p><strong>Tecnologías:</strong> Arduino</p>
+      <div class="imagenes-fila">
+        <img src="imagenes/Espectrofotometro1.jpeg">
+        <img src="imagenes/Espectrofotometro2.jpeg">
+      </div>
     </div>
     <div class="tarjeta">
       <h3>Pulsómetro con contador de pasos </h3>
@@ -212,6 +293,36 @@
         en tiempo real los valores de pulso y otras variables. Participé en la programación, la visualización de los
         datos y las pruebas de funcionamiento del sistema.</p>
       <p><strong>Tecnologías:</strong> C, Arduino, Spyder</p>
+      <div class="imagenes-fila2">
+        <!--<img src="imagenes/Iathon.png"> -->
+        <img src="imagenes/bpm1.png">
+        <img src="imagenes/bpm2.png">
+        <img src="imagenes/bpm3.png">
+      </div>
+    </div>
+  </section>
+  <section id="habilidades">
+    <h2>Habilidades</h2>
+    <p><strong>Análisis de datos</strong></p>
+    <div class="habilidades">
+      <span class="habilidad">Python</span>
+      <span class="habilidad">R</span>
+      <span class="habilidad">Pandas</span>
+      <span class="habilidad">NumPy</span>
+      <span class="habilidad">Matplotlib</span>
+      <span class="habilidad">Seaborn</span>
+      <span class="habilidad">Scikit-learn</span>
+    </div>
+    <p><strong>Simulación y modelado</strong></p>
+    <div class="habilidades">
+      <span class="habilidad">PhysiCell</span>
+      <span class="habilidad">MATLAB</span>
+      <span class="habilidad">SimulX</span>
+    </div>
+    <p><strong>Dispositivos médicos</strong></p>
+    <div class="habilidades">
+      <span class="habilidad">Arduino</span>
+      <span class="habilidad">C</span>
     </div>
   </section>
   <section id="contacto">
