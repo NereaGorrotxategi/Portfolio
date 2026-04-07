@@ -76,17 +76,65 @@
     .btn-cv:hover {
       background-color: #0b5240;
     }
+
+    header {
+      background-color: #0F6E56;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    header h1 {
+      color: white;
+    }
+
+    header p {
+      color: #9FE1CB;
+      margin-top: 8px;
+    }
+
+    .tarjeta video {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .imagenes-fila {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .imagenes-fila img {
+      width: 50%;
+      border-radius: 6px;
+    }
+
+    .imagenes-fila2 {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .imagenes-fila2 img {
+      width: 33%;
+      border-radius: 6px;
+    }
   </style>
 </head>
 
 <body>
-  <h1> Nerea Gorrotxategi Vergara </h1> <!-- título principal -->
+  <header>
+    <h1>Nerea Gorrotxategi Vergara</h1>
+    <p>Ingeniería Biomédica · Análisis de datos</p>
+  </header>
   <nav>
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#proyectos">Proyectos</a>
     <a href="#contacto">Contacto</a>
   </nav>
-  <section id="Sobre-mi">
+  <section id="sobre-mi">
     <h2> Sobre mí </h2> <!-- título grande -->
     <p><strong> Máster en Ingeniería Biomédica, con especialización en análisis de datos en biomedicina </strong></p>
     <!-- subtítulo de sección -->
@@ -105,6 +153,9 @@
         <a href="https://hdl.handle.net/10171/117005"> https://hdl.handle.net/10171/117005 </a>
       </p>
       <p><strong>Tecnologías:</strong> Python, MATLAB, PhysiCell</p>
+      <video width="100%" controls>
+        <source src="videos/Simulación31 (1).webm" type="video/webm">
+      </video>
     </div>
     <div class="tarjeta">
       <h3> Análisis estadístico y modelos de Machine Learning en problemas de tiroides</h3>
@@ -113,6 +164,10 @@
         patrones y, después, desarrollamos en R dos modelos de Machine Learning supervisado (regresión logística y
         Elastic Net) para clasificar entre población sana y enfermedad tiroidea y comparamos su rendimiento con
         distintas métricas.</p>
+      <div class="imagenes-fila">
+        <img src="imagenes/tiroides1.png" alt="Análisis PCA tiroides">
+        <img src="imagenes/tiroides2.png" alt="Modelo ML tiroides">
+      </div>
       <p><strong>Tecnologías:</strong> RStudio</p>
     </div>
     <div class="tarjeta">
@@ -122,6 +177,11 @@
         los datos, en el análisis de supervivencia (Kaplan-Meier) y en el estudio de genes clave frecuentemente
         alterados en glioblastoma. También colaboré en el desarrollo de un modelo de Machine Learning en R para
         estimar el pronóstico de los pacientes a partir de variables clínicas y genómicas.</p>
+      <div class="imagenes-fila2">
+        <img src="imagenes/genome1.png" alt="Análisis PCA tiroides">
+        <img src="imagenes/genome2.png" alt="Modelo ML tiroides">
+        <img src="imagenes/genome3.png" alt="Modelo ML tiroides">
+      </div>
       <p><strong>Tecnologías:</strong> RStudio</p>
     </div>
     <div class="tarjeta">
