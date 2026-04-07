@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <title> Nerea Gorrotxategi Vergara </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      max-width: 800px;
+      padding: 20px;
+      margin: 0 auto;
+      font-family: Montserrat, sans-serif;
+    }
+
+    h1 {
+      color: #0F6E56;
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    h2 {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    section {
+      border-top: 2px solid #0F6E56;
+      padding-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    .tarjeta {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .tarjeta h3 {
+      color: #0F6E56;
+      margin-top: 0;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+
+    nav a {
+      color: #0F6E56;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .btn-cv {
+      display: inline-block;
+      background-color: #0F6E56;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .btn-cv:hover {
+      background-color: #0b5240;
+    }
+  </style>
+</head>
+
+<body>
+  <h1> Nerea Gorrotxategi Vergara </h1> <!-- título principal -->
+  <nav>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <section id="Sobre-mi">
+    <h2> Sobre mí </h2> <!-- título grande -->
+    <p><strong> Máster en Ingeniería Biomédica, con especialización en análisis de datos en biomedicina </strong></p>
+    <!-- subtítulo de sección -->
+    <p> Soy una profesional con experiencia en el análisis de datos y su aplicación en el ámbito de la biomedicina. Mi
+      objetivo es contribuir al desarrollo de soluciones innovadoras que mejoren la salud y el bienestar. </p>
+    <!-- párrafo -->
+    <a href="CV_GorrotxategiNerea.pdf" target="_blank" class="btn-cv">Ver mi CV</a>
+  </section>
+  <section id="proyectos">
+    <h2> Proyectos </h2>
+    <div class="tarjeta">
+      <h3> Proyecto Fín de Grado </h3>
+      <p>Análisis del modelo de difusión y consumo de oxígeno en PhysiCell con replicación/validación cuantitativa en
+        MATLAB, apoyado con procesado de resultados en Python/Excel. Publicado en el Depósito Académico Digital de la
+        Universidad de Navarra (DADUN):
+        <a href="https://hdl.handle.net/10171/117005"> https://hdl.handle.net/10171/117005 </a>
+      </p>
+      <p><strong>Tecnologías:</strong> Python, MATLAB, PhysiCell</p>
+    </div>
+    <div class="tarjeta">
+      <h3> Análisis estadístico y modelos de Machine Learning en problemas de tiroides</h3>
+      <p> Proyecto en grupo a partir de una cohorte de pacientes con patología tiroidea. Participé en la limpieza de la
+        base de datos y en el análisis de variables clínicas y hormonales. Aplicamos PCA y k-means para explorar
+        patrones y, después, desarrollamos en R dos modelos de Machine Learning supervisado (regresión logística y
+        Elastic Net) para clasificar entre población sana y enfermedad tiroidea y comparamos su rendimiento con
+        distintas métricas.</p>
+      <p><strong>Tecnologías:</strong> RStudio</p>
+    </div>
+    <div class="tarjeta">
+      <h3> Análisis genómico y modelo predictivo en glioblastoma</h3>
+      <p> Proyecto académico en grupo en el que trabajamos con datos públicos de TCGA (glioblastoma) para integrar
+        información clínica, mutaciones y alteraciones en número de copias. Participé en la limpieza y curación de
+        los datos, en el análisis de supervivencia (Kaplan-Meier) y en el estudio de genes clave frecuentemente
+        alterados en glioblastoma. También colaboré en el desarrollo de un modelo de Machine Learning en R para
+        estimar el pronóstico de los pacientes a partir de variables clínicas y genómicas.</p>
+      <p><strong>Tecnologías:</strong> RStudio</p>
+    </div>
+    <div class="tarjeta">
+      <h3> Espectrofotómetro con Arduino</h3>
+      <p> Proyecto académico en grupo en el que diseñamos y construimos un espectrofotómetro de bajo coste utilizando
+        Arduino, una fuente de luz y un sensor para medir la intensidad de luz transmitida a través de distintas
+        disoluciones. Colaboré en el montaje del sistema, en la toma de medidas y en la interpretación básica de los
+        resultados, aplicando conceptos de óptica e instrumentación biomédica.</p>
+      <p><strong>Tecnologías:</strong> Arduino</p>
+    </div>
+    <div class="tarjeta">
+      <h3>Pulsómetro con contador de pasos </h3>
+      <p> Proyecto en grupo centrado en el desarrollo de un dispositivo portátil basado en Arduino para registrar
+        frecuencia cardiaca y contar pasos en tiempo real mediante un sensor de pulso y un acelerómetro. Los datos se
+        enviaban por serie a Python y se mostraban en un pequeño dashboard programado en Spyder, donde se actualizaban
+        en tiempo real los valores de pulso y otras variables. Participé en la programación, la visualización de los
+        datos y las pruebas de funcionamiento del sistema.</p>
+      <p><strong>Tecnologías:</strong> C, Arduino, Spyder</p>
+    </div>
+  </section>
+  <section id="contacto">
+    <h2> Contacto </h2>
+    <p> Puedes contactarme a través de mi correo electrónico:
+      <a href="mailto:nereagvj@gmail.com"> nereagvj@gmail.com </a>
+      o a través de mi perfil de LinkedIn:
+      <a href="https://www.linkedin.com/in/nerea-gorrotxategi-vergara/"> LinkedIn </a>
+    </p>
+  </section>
+
+</body>
+
+</html>
