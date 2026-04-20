@@ -1,0 +1,131 @@
+function abrirImagen(src) {
+    document.getElementById('imagen-ampliada').src = src;
+    document.getElementById('overlay').style.display = 'flex';
+}
+
+function cerrarImagen() {
+    document.getElementById('overlay').style.display = 'none';
+}
+const translations = {
+    es: {
+        "header-subtitle": "Ingeniería Biomédica · Análisis de datos", "nav-about": "Sobre mí",
+        "nav-projects": "Proyectos",
+        "nav-skills": "Habilidades",
+        "nav-contact": "Contacto",
+        "about-title": "Sobre mí",
+        "about-subtitle": "Máster en Ingeniería Biomédica, con especialización en análisis de datos en biomedicina",
+        "about-text": "Graduada en Ingeniería Biomédica, actualmente curso el Máster con especialización en Análisis de Datos Biomédicos. Me interesa aplicar IA y análisis de datos para mejorar la toma de decisiones en salud y contribuir al desarrollo de soluciones en biomedicina y biotecnología. Busco oportunidad para realizar mi PFM en análisis de datos aplicado a biomedicina — en empresa biotech, biopharma, salud digital o grupo de investigación.",
+        "about-cv": "Ver mi CV",
+        "projects-title": "Proyectos",
+        "projects-title-1": "Proyecto Fín de Grado",
+        "projects-text-1": "Análisis del modelo de difusión y consumo de oxígeno en PhysiCell con replicación/validación cuantitativa en MATLAB, apoyado con procesado de resultados en Python/Excel. Publicado en el Depósito Académico Digital de la Universidad de Navarra (DADUN).",
+        "tech-label": "Tecnologías:",
+        "projects-title-2": "Análisis estadístico y modelos de Machine Learning en problemas de tiroides",
+        "projects-text-2": "Proyecto en grupo a partir de una cohorte de pacientes con patología tiroidea. Participé en la limpieza de la base de datos y en el análisis de variables clínicas y hormonales. Aplicamos PCA y k-means para explorar patrones y, después, desarrollamos en R dos modelos de Machine Learning supervisado (regresión logística y Elastic Net) para clasificar entre población sana y enfermedad tiroidea y comparamos su rendimiento con distintas métricas.",
+        "tech-label": "Tecnologías:",
+        "projects-title-3": "Análisis genómico y modelo predictivo en glioblastoma",
+        "projects-text-3": "Proyecto académico en grupo en el que trabajamos con datos públicos de TCGA (glioblastoma) para integrar información clínica, mutaciones y alteraciones en número de copias. Participé en la limpieza y curación de los datos, en el análisis de supervivencia (Kaplan-Meier) y en el estudio de genes clave frecuentemente alterados en glioblastoma. También colaboré en el desarrollo de un modelo de Machine Learning en R para estimar el pronóstico de los pacientes a partir de variables clínicas y genómicas.",
+        "tech-label": "Tecnologías:",
+        "projects-title-4": "Generador automático de informes con IA",
+        "projects-text-4": "Proyecto desarrollado en el IAthon 2026 en equipo. Herramienta que lee un dataset (CSV/Excel) y genera automáticamente un informe con gráficas, tablas y conclusiones usando IA. El informe se puede exportar en PDF, Word o PowerPoint, en español o inglés, con una interfaz interactiva construida en Streamlit.",
+        "tech-label": "Tecnologías:",
+        "projects-title-5": "Modelo predictivo de moratabilidad e intubación en pacientes COVID-19",
+        "projects-text-5": "Proyecto académico en grupo en el que trabajamos con datos públicos de pacientes con COVID-19 para predecir la mortalidad y la necesidad de intubación. Participé en la limpieza y curación de los datos, en el análisis de variables clínicas y hormonales. Aplicamos PCA y k-means para explorar patrones y, después, desarrollamos en R dos modelos de Machine Learning supervisado (regresión logística y Elastic Net) para clasificar entre población sana y enfermedad tiroidea y comparamos su rendimiento con distintas métricas.",
+        "tech-label": "Tecnologías:",
+        "projects-title-6": "CarpoCare Pro — Exoesqueleto de rehabilitación de mano",
+        "projects-text-6": "Proyecto académico en grupo en el que trabajamos con datos públicos de pacientes con COVID-19 para predecir la mortalidad y la necesidad de intubación. Participé en la limpieza y curación de los datos, en el análisis de variables clínicas y hormonales. Aplicamos PCA y k-means para explorar patrones y, después, desarrollamos en R dos modelos de Machine Learning supervisado (regresión logística y Elastic Net) para clasificar entre población sana y enfermedad tiroidea y comparamos su rendimiento con distintas métricas.",
+        "tech-label": "Tecnologías:",
+        "projects-title-7": "Espectrofotómetro con Arduino",
+        "projects-text-7": "Proyecto académico en grupo en el que trabajamos con datos públicos de pacientes con COVID-19 para predecir la mortalidad y la necesidad de intubación. Participé en la limpieza y curación de los datos, en el análisis de variables clínicas y hormonales. Aplicamos PCA y k-means para explorar patrones y, después, desarrollamos en R dos modelos de Machine Learning supervisado (regresión logística y Elastic Net) para clasificar entre población sana y enfermedad tiroidea y comparamos su rendimiento con distintas métricas.",
+        "tech-label": "Tecnologías:",
+        "projects-title-8": "Pulsómetro con contador de pasos",
+        "projects-text-8": "Proyecto académico en grupo en el que trabajamos con datos públicos de pacientes con COVID-19 para predecir la mortalidad y la necesidad de intubación. Participé en la limpieza y curación de los datos, en el análisis de variables clínicas y hormonales. Aplicamos PCA y k-means para explorar patrones y, después, desarrollamos en R dos modelos de Machine Learning supervisado (regresión logística y Elastic Net) para clasificar entre población sana y enfermedad tiroidea y comparamos su rendimiento con distintas métricas.",
+        "tech-label": "Tecnologías:",
+    },
+    en: {
+        "header-subtitle": "Biomedical Engineering · Data Analysis",
+        "nav-about": "About me",
+        "nav-projects": "Projects",
+        "nav-skills": "Skills",
+        "nav-contact": "Contact",
+        "about-title": "About me",
+        "about-subtitle": "Master in Biomedical Engineering, with specialization in data analysis in biomedicine",
+        "about-text": "Graduated in Biomedical Engineering, currently pursuing a Master's degree with specialization in Biomedical Data Analysis. I am interested in applying AI and data analysis to improve decision-making in health and contribute to the development of solutions in biomedicine and biotechnology. I am looking for an opportunity to carry out my PFM in data analysis applied to biomedicine — in a biotech, biopharma, digital health company or research group.",
+        "about-cv": "View my CV",
+        "projects-title": "Projects",
+        "projects-title-1": "Final Degree Project",
+        "projects-text-1": "Analysis of the oxygen diffusion and consumption model in PhysiCell with quantitative replication/validation in MATLAB, supported by result processing in Python/Excel. Published in the Academic Digital Repository of the University of Navarra (DADUN)",
+        "tech-label": "Technologies:",
+        "projects-title-2": "Statistical analysis and Machine Learning models for thyroid disorders",
+        "projects-text-2": "Group project based on a cohort of patients with thyroid pathology. I participated in data cleaning and in the analysis of clinical and hormonal variables. We applied PCA and k-means to explore patterns and then developed in R two supervised Machine Learning models (logistic regression and Elastic Net) to classify between healthy population and thyroid disease, comparing their performance with different metrics.",
+        "tech-label": "Technologies:",
+        "projects-title-3": "Genomic analysis and predictive model in glioblastoma",
+        "projects-text-3": "Academic group project in which we worked with public TCGA data (glioblastoma) to integrate clinical information, mutations and copy number alterations. I participated in data cleaning and curation, survival analysis (Kaplan-Meier) and the study of key genes frequently altered in glioblastoma. I also collaborated in developing a Machine Learning model in R to estimate patient prognosis from clinical and genomic variables.",
+        "tech-label": "Technologies:",
+        "projects-title-4": "Automatic AI-powered report generator",
+        "projects-text-4": "Team project developed at IAthon 2026. A tool that reads a dataset (CSV/Excel) and automatically generates a report with charts, tables and conclusions using AI. The report can be exported as PDF, Word or PowerPoint, in Spanish or English, with an interactive interface built in Streamlit.",
+        "tech-label": "Technologies:",
+        "projects-title-5": "Predictive model of mortality and intubation in COVID-19 patients",
+        "projects-text-5": "Statistical analysis and development of machine learning models to predict mortality and the need for intubation in hospitalised COVID-19 patients, in collaboration with Hospital Universitario Donostia (Osakidetza) and TECNUN (University of Navarra). Clinical data from 598 patients with 125 variables were processed. Data cleaning, imputation of missing values by age group mean, feature engineering (BMI, oxygenation index, life cycle) and variable selection using the AIC criterion were performed. The final models were trained with Logistic Regression (liblinear and newton-cg solvers), achieving an AUC-ROC of 0.92 in the mortality model. Results are visualised in an interactive dashboard built with Dash.",
+        "tech-label": "Technologies:",
+        "projects-title-6": "CarpoCare Pro — Hand rehabilitation exoskeleton",
+        "projects-text-6": "Design and development of a wearable exoskeleton glove for the rehabilitation of Carpal Tunnel Syndrome. The system integrates 5 Arduino microcontrollers, EMG sensors, 4 accelerometers, and real-time heart rate and SpO₂ monitoring. Includes a clinical GUI to visualise the patient's range of motion (ROM) and muscle activity.",
+        "tech-label": "Technologies:",
+        "projects-title-7": "Spectrophotometer with Arduino",
+        "projects-text-7": "Academic group project in which we designed and built a low-cost spectrophotometer using Arduino, a light source and a sensor to measure the intensity of light transmitted through different solutions. I contributed to the assembly of the system, the taking of measurements and the basic interpretation of results, applying concepts of optics and biomedical instrumentation.",
+        "tech-label": "Technologies:",
+        "projects-title-8": "Heart rate monitor with step counter",
+        "projects-text-8": "Development of a portable device for monitoring heart rate and counting steps, using an Arduino microcontroller and a pulse sensor. The system includes a real-time display of vital signs and step count, with data logging capabilities and a user-friendly interface. The project was developed from scratch, including hardware design, programming, and calibration.",
+        "tech-label": "Technologies:",
+    },
+    eu: {
+        "header-subtitle": "Biomedikuntza Ingeniaritza · Datuen analisia",
+        "nav-about": "Niri buruz",
+        "nav-projects": "Proiektuak",
+        "nav-skills": "Gaitasunak",
+        "nav-contact": "Kontaktua",
+        "about-title": "Niri buruz",
+        "about-subtitle": "Biomedikuntza Ingeniaritza Masterra, datuen analisian espezializatua",
+        "about-text": "Biomedikuntza Ingeniaritzan graduatua, une honetan Datu Biomédikoen Analisian espezializatutako Masterra ikasten ari naiz. Osasunean erabakiak hartzea hobetzeko eta biomedikuntzan eta bioteknologian soluzioak garatzen laguntzeko AI eta datuen analisia aplikatzea interesatzen zait. Biomedikuntzan aplikatutako datuen analisian PFM bat egiteko aukera bilatzen ari naiz — biotech, biopharma, osasun digitaleko enpresa edo ikerketa talde batean.",
+        "about-cv": "Ikusi nire CVa",
+        "projects-title": "Proiektuak",
+        "projects-title-1": "Gradu Amaierako Proiektua",
+        "projects-text-1": "PhysiCell-en oxigenoaren difusio eta kontsumo ereduaren analisia, MATLAB-en baliozkotze kuantitatiboarekin, Python/Excel-en emaitzak prozesatuz. Nafarroako Unibertsitateko Gordailu Akademiko Digitalean (DADUN) argitaratua.",
+        "tech-label": "Teknologiak:",
+        "projects-title-2": "Analisi estatistikoa eta Machine Learning ereduak tiroide-gaixotasunetan",
+        "projects-text-2": "Talde-proiektua tiroide-patologia duten pazienteen kohorte batean oinarrituta. Datu-basearen garbiketan eta aldagai kliniko eta hormonalen analisian parte hartu nuen. PCA eta k-means aplikatu genituen ereduak esploratzeko eta ondoren R-en bi Machine Learning gainbegiraletako eredu garatu genituen (erregresio logistikoa eta Elastic Net) biztanleria osasuntsua eta tiroide-gaixotasuna sailkatzeko, haien errendimendua hainbat metrikarekin alderatuz.",
+        "tech-label": "Teknologiak:",
+        "projects-title-3": "Glioblastomaren azterketa genomikoa eta eredu prediktiboa",
+        "projects-text-3": "Taldeko proiektu akademikoa, TCGA datu publikoekin (glioblastoma) informazio klinikoa, mutazioak eta kopia-kopuruko aldaketak integratzeko. Datuen garbiketan eta kurazioean, biziraupena analisian (Kaplan-Meier) eta glioblastoman maiz aldatutako funtsezko geneen azterketan parte hartu nuen. R-en Machine Learning eredu bat garatzen ere lagundu nuen gaixoen pronostikoa aldagai kliniko eta genomikoetatik estimatzeko.",
+        "tech-label": "Teknologiak:",
+        "projects-title-4": "IA bidezko txosten-sorgailu automatikoa",
+        "projects-text-4": "IAthon 2026an taldean garatutako proiektua. Dataset bat (CSV/Excel) irakurri eta automatikoki txosten bat sortzen duen tresna, grafikak, taulak eta ondorioak IA erabiliz. Txostena PDF, Word edo PowerPoint formatuan exportatu daiteke, gaztelaniaz edo ingelesez, Streamlit-en eraikitako interfaze interaktibo batekin.",
+        "tech-label": "Teknologiak:",
+        "projects-title-5": "COVID-19 pazienteetan heriotza eta intubazioaren eredu prediktiboa",
+        "projects-text-5": "Analisi estatistikoa eta machine learning ereduen garapena COVID-19a duten ospitaleratutako gaixoengan heriotza eta intubazioaren beharra iragartzeko, Donostiako Unibertsitate Ospitalearekin (Osakidetza) eta TECNUN-ekin (Nafarroako Unibertsitatea) lankidetzan. 125 aldagaidun 598 gaixoren datu klinikoak prozesatu ziren. Datuen garbiketa, balio hutsen imputazioa adin-taldearen batezbestekoarekin, ezaugarrien ingeniaritza (GKI, oxigenazio-indizea, bizi-zikloa) eta AIC irizpidea erabiliz aldagaien hautaketa egin zen. Azken ereduak Erregresio Logistikoarekin entrenatu ziren, 0,92ko AUC-ROC lortuz heriotza-ereduan. Emaitzak Dash-ekin garatutako dashboard interaktibo batean ikusgai daude.",
+        "tech-label": "Teknologiak:",
+        "projects-title-6": "CarpoCare Pro — Eskuko errehabilitazio exoeskeletoa",
+        "projects-text-6": "Karpe-tunel sindromearen birgaitzeko exoeskeletozko eskularru wearable baten diseinua eta garapena. Sistemak 5 Arduino mikrokontrolagailu, EMG sentsoreak, 4 azeleromatro eta bihotz-maiztasun eta SpO₂ denbora errealeko monitorizazioa integratzen ditu. Gaixoaren mugimendu-tartea (ROM) eta muskulu-jarduera ikusteko GUI kliniko bat dauka.",
+        "tech-label": "Teknologiak:",
+        "projects-title-7": "Espektrofotometroa Arduino-rekin",
+        "projects-text-7": "Taldeko proiektu akademikoa, Arduino, argi-iturri eta sentsore bat erabiliz kostu txikiko espektrofotometro bat diseinatu eta eraiki genuena, disoluzio ezberdinen bidez transmititutako argiaren intentsitatea neurtzeko. Sistemaren muntaketan, neurketen hartzean eta emaitzen oinarrizko interpretazioan parte hartu nuen, optikako eta biomedikuntza-instrumentazioko kontzeptuak aplikatuz.",
+        "tech-label": "Teknologiak:",
+        "projects-title-8": "Bihotz-taupaden monitorea eta pauso-kontagailua",
+        "projects-text-8": "Taldeko proiektua Arduino-n oinarritutako gailu eramangarri bat garatzeko, bihotz-maiztasuna erregistratzeko eta urratsak denbora errealean kontatzeko pultsu-sentsore eta azelerometro baten bidez. Datuak seriez Python-era bidaltzen ziren eta Spyder-en programatutako dashboard txiki batean erakusten ziren, pultsu-balioak eta beste aldagaiak denbora errealean eguneratzen zirelarik. Programazioan, datuen bistaratze eta sistemaren funtzionamendu-proben parte hartu nuen.",
+        "tech-label": "Teknologiak:",
+    }
+}
+
+function setLang(lang) {
+    const t = translations[lang];
+    document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        el.innerHTML = t[key];
+    });
+
+    // Actualizar botón activo
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+}
+
+setLang('es');

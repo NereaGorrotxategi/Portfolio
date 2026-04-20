@@ -8,251 +8,62 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      max-width: 800px;
-      padding: 20px;
-      margin: 0 auto;
-      text-align: justify;
-      font-family: Montserrat, sans-serif;
-    }
-
-    h1 {
-      color: #0F6E56;
-      text-align: center;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-
-    h2 {
-      font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-
-    section {
-      border-top: 2px solid #0F6E56;
-      padding-top: 20px;
-      margin-bottom: 40px;
-    }
-
-    .tarjeta {
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 16px;
-    }
-
-    .tarjeta h3 {
-      color: #0F6E56;
-      margin-top: 0;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-
-    nav {
-      display: flex;
-      gap: 24px;
-      justify-content: center;
-      margin-bottom: 32px;
-    }
-
-    nav a {
-      color: #0F6E56;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .btn-cv {
-      display: inline-block;
-      background-color: #0F6E56;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .btn-cv:hover {
-      background-color: #0b5240;
-    }
-
-    header {
-      background-color: #0F6E56;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-      margin-bottom: 32px;
-    }
-
-    header h1 {
-      color: white;
-    }
-
-    header p {
-      color: #9FE1CB;
-      margin-top: 8px;
-    }
-
-    .tarjeta video {
-      width: 100%;
-      border-radius: 6px;
-      margin-bottom: 12px;
-    }
-
-    .imagenes-fila {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .imagenes-fila img {
-      width: 50%;
-      border-radius: 6px;
-    }
-
-    .imagenes-fila2 {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .imagenes-fila2 img {
-      width: 33%;
-      border-radius: 6px;
-    }
-
-    .habilidades {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .habilidad {
-      background-color: #E1F5EE;
-      color: #0F6E56;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .imagenes-fila3 {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .imagenes-fila3 img {
-      width: 33%;
-      border-radius: 6px;
-      object-fit: contain;
-    }
-
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-      cursor: pointer;
-    }
-
-    .overlay img {
-      max-width: 90%;
-      max-height: 90vh;
-      border-radius: 8px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<div class="overlay" id="overlay" onclick="cerrarImagen()">
-  <img id="imagen-ampliada" src="" alt="">
-</div>
-<script>
-  function abrirImagen(src) {
-    document.getElementById('imagen-ampliada').src = src;
-    document.getElementById('overlay').style.display = 'flex';
-  }
-
-  function cerrarImagen() {
-    document.getElementById('overlay').style.display = 'none';
-  }
-</script>
 
 <body>
+  <div class="overlay" id="overlay" onclick="cerrarImagen()">
+    <img id="imagen-ampliada" src="" alt="">
+  </div>
   <header>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('eu')">EU</button>
+    </div>
     <h1>Nerea Gorrotxategi Vergara</h1>
-    <p>Ingeniería Biomédica · Análisis de datos</p>
+    <p data-key="header-subtitle"></p>
   </header>
   <nav>
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#habilidades">Habilidades</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#sobre-mi" data-key="nav-about"></a>
+    <a href="#proyectos" data-key="nav-projects"></a>
+    <a href="#habilidades" data-key="nav-skills"></a>
+    <a href="#contacto" data-key="nav-contact"></a>
   </nav>
   <section id="sobre-mi">
-    <h2> Sobre mí </h2> <!-- título grande -->
-    <p><strong> Máster en Ingeniería Biomédica, con especialización en análisis de datos en biomedicina </strong></p>
-    <!-- subtítulo de sección -->
-    <p> Graduada en Ingeniería Biomédica, actualmente curso el Máster
-      con especialización en Análisis de Datos Biomédicos. Me interesa
-      aplicar IA y análisis de datos para mejorar la toma de decisiones
-      en salud y contribuir al desarrollo de soluciones en biomedicina
-      y biotecnología.
-      <br>
-      <br>
-      Busco oportunidad para realizar mi PFM en análisis de datos
-      aplicado a biomedicina — en empresa biotech, biopharma, salud digital
-      o grupo de investigación.
-    </p>
-    <!-- párrafo -->
+    <h2 data-key="about-title"></h2>
+    <p><strong data-key="about-subtitle"></strong></p>
+    <p data-key="about-text"></p>
     <a href="https://drive.google.com/file/d/1yMM3QdwOmP_zTLqRZ5zGD_s5NUeuSoHi/view?usp=drive_link" target="_blank"
-      class="btn-cv">Ver mi CV</a>
+      class="btn-cv" data-key="about-cv"></a>
   </section>
   <section id="proyectos">
-    <h2> Proyectos </h2>
+    <h2 data-key="projects-title"></h2>
     <div class="tarjeta">
-      <h3> Proyecto Fín de Grado </h3>
-      <p>Análisis del modelo de difusión y consumo de oxígeno en PhysiCell con replicación/validación cuantitativa en
-        MATLAB, apoyado con procesado de resultados en Python/Excel. Publicado en el Depósito Académico Digital de la
-        Universidad de Navarra (DADUN).
+      <h3 data-key="projects-title-1"></h3>
+      <p data-key="projects-text-1">
         <br>
         <a href="https://hdl.handle.net/10171/117005" target="_blank" class="btn-cv">Ver </a>
       </p>
-      <p><strong>Tecnologías:</strong> Python, MATLAB, PhysiCell</p>
+      <p><strong data-key="tech-label"></strong> Python, MATLAB, PhysiCell</p>
       <video width="100%" controls>
         <source src="videos/Simulación31 (1).webm" type="video/webm">
       </video>
     </div>
     <div class="tarjeta">
-      <h3> Análisis estadístico y modelos de Machine Learning en problemas de tiroides</h3>
-      <p> Proyecto en grupo a partir de una cohorte de pacientes con patología tiroidea. Participé en la limpieza de la
-        base de datos y en el análisis de variables clínicas y hormonales. Aplicamos PCA y k-means para explorar
-        patrones y, después, desarrollamos en R dos modelos de Machine Learning supervisado (regresión logística y
-        Elastic Net) para clasificar entre población sana y enfermedad tiroidea y comparamos su rendimiento con
-        distintas métricas.</p>
+      <h3 data-key="projects-title-2"></h3>
+      <p data-key="projects-text-2"></p>
       <div class="imagenes-fila">
         <img src="imagenes/tiroides1.png" alt="Análisis PCA tiroides" onclick="abrirImagen(this.src)"
           style="cursor:pointer;">
         <img src="imagenes/tiroides2.png" alt="Modelo ML tiroides" onclick="abrirImagen(this.src)"
           style="cursor:pointer;">
       </div>
-      <p><strong>Tecnologías:</strong> RStudio</p>
+      <p><strong data-key="tech-label"></strong> RStudio</p>
     </div>
     <div class="tarjeta">
-      <h3> Análisis genómico y modelo predictivo en glioblastoma</h3>
-      <p> Proyecto académico en grupo en el que trabajamos con datos públicos de TCGA (glioblastoma) para integrar
-        información clínica, mutaciones y alteraciones en número de copias. Participé en la limpieza y curación de
-        los datos, en el análisis de supervivencia (Kaplan-Meier) y en el estudio de genes clave frecuentemente
-        alterados en glioblastoma. También colaboré en el desarrollo de un modelo de Machine Learning en R para
-        estimar el pronóstico de los pacientes a partir de variables clínicas y genómicas.</p>
+      <h3 data-key="projects-title-3"></h3>
+      <p data-key="projects-text-3"></p>
       <div class="imagenes-fila2">
         <img src="imagenes/genome1.png" alt="Análisis PCA tiroides" onclick="abrirImagen(this.src)"
           style="cursor:pointer;">
@@ -261,16 +72,12 @@
         <img src="imagenes/genome3.png" alt="Modelo ML tiroides" onclick="abrirImagen(this.src)"
           style="cursor:pointer;">
       </div>
-      <p><strong>Tecnologías:</strong> RStudio</p>
+      <p><strong data-key="tech-label"></strong> RStudio</p>
     </div>
     <div class="tarjeta">
-      <h3>Generador automático de informes con IA</h3>
-      <p>Proyecto desarrollado en el IAthon 2026 en equipo. Herramienta que
-        lee un dataset (CSV/Excel) y genera automáticamente un informe con
-        gráficas, tablas y conclusiones usando IA. El informe se puede exportar
-        en PDF, Word o PowerPoint, en español o inglés, con una interfaz
-        interactiva construida en Streamlit.</p>
-      <p><strong>Tecnologías:</strong> Python, Streamlit, OpenAI API, Pandas</p>
+      <h3 data-key="projects-title-4"></h3>
+      <p data-key="projects-text-4"></p>
+      <p><strong data-key="tech-label"></strong> Python, Streamlit, OpenAI API, Pandas</p>
       <div class="imagenes-fila3">
         <!--<img src="imagenes/Iathon.png"> -->
         <img src="imagenes/Iathon.png" onclick="abrirImagen(this.src)" style="cursor:pointer;">
@@ -280,21 +87,9 @@
       <!--<a href="https://github.com/NereaGorrotxategi/Hiper" class="btn-ver" target="_blank">Ver en GitHub →</a>-->
     </div>
     <div class="tarjeta">
-      <h3>Modelo predictivo de moratabilidad e intubación en pacientes COVID-19</h3>
-      <p>Análisis estadístico y desarrollo de modelos de machine learning para predecir
-        la mortalidad y la necesidad de intubación en pacientes hospitalizados con COVID-19,
-        en colaboración con el Hospital Universitario Donostia (Osakidetza) y TECNUN
-        (Universidad de Navarra).</p>
-      <p>
-        Se procesaron datos clínicos de 598 pacientes con 125 variables. Se realizó
-        limpieza de datos, imputación de valores nulos por media por grupo de edad,
-        ingeniería de características (IMC, índice de oxigenación, ciclo de vida) y
-        selección de variables mediante el criterio AIC. Los modelos finales se
-        entrenaron con Regresión Logística (solvers <em>liblinear</em> y
-        <em>newton-cg</em>), obteniendo un AUC-ROC de 0.92 en el modelo de mortalidad.
-        Los resultados se visualizan en un dashboard interactivo desarrollado con Dash.
-      </p>
-      <p><strong>Tecnologías:</strong> Python, Pandas, Scikit-learn, Statsmodels,
+      <h3 data-key="projects-title-5"></h3>
+      <p data-key="projects-text-5"></p>
+      <p><strong data-key="tech-label"></strong> Python, Pandas, Scikit-learn, Statsmodels,
         Matplotlib, Seaborn, Plotly Dash, Google Colab</p>
       <div class="imagenes-fila2">
         <img src="imagenes/modelo1.png" onclick="abrirImagen(this.src)" style="cursor:pointer;">
@@ -303,39 +98,27 @@
       </div>
     </div>
     <div class="tarjeta">
-      <h3>CarpoCare Pro — Exoesqueleto de rehabilitación de mano</h3>
-      <p>Diseño y desarrollo de un guante exoesqueleto wearable para la
-        rehabilitación del Síndrome del Túnel Carpiano. El sistema integra
-        5 microcontroladores Arduino, sensores EMG, 4 acelerómetros, y
-        monitorización de frecuencia cardiaca y SpO₂ en tiempo real.
-        Incluye una GUI clínica para visualizar el rango de movimiento (ROM)
-        y la actividad muscular del paciente.</p>
-      <p><strong>Tecnologías:</strong> Arduino, C++, Python, EMG, SpO₂</p>
+      <h3 data-key="projects-title-6"></h3>
+      <p data-key="projects-text-6"></p>
+      <p><strong data-key="tech-label"></strong> Arduino, C++, Python, EMG, SpO₂</p>
       <div class="imagenes-fila">
         <img src="imagenes/embebidos.png" onclick="abrirImagen(this.src)" style="cursor:pointer;">
         <img src="imagenes/embebidos2.png" onclick="abrirImagen(this.src)" style="cursor:pointer;">
       </div>
     </div>
     <div class="tarjeta">
-      <h3> Espectrofotómetro con Arduino</h3>
-      <p> Proyecto académico en grupo en el que diseñamos y construimos un espectrofotómetro de bajo coste utilizando
-        Arduino, una fuente de luz y un sensor para medir la intensidad de luz transmitida a través de distintas
-        disoluciones. Colaboré en el montaje del sistema, en la toma de medidas y en la interpretación básica de los
-        resultados, aplicando conceptos de óptica e instrumentación biomédica.</p>
-      <p><strong>Tecnologías:</strong> Arduino</p>
+      <h3 data-key="projects-title-7"></h3>
+      <p data-key="projects-text-7"></p>
+      <p><strong data-key="tech-label"></strong> Arduino</p>
       <div class="imagenes-fila">
         <img src="imagenes/Espectrofotometro1.jpeg" onclick="abrirImagen(this.src)" style="cursor:pointer;">
         <img src="imagenes/Espectrofotometro2.jpeg" onclick="abrirImagen(this.src)" style="cursor:pointer;">
       </div>
     </div>
     <div class="tarjeta">
-      <h3>Pulsómetro con contador de pasos </h3>
-      <p> Proyecto en grupo centrado en el desarrollo de un dispositivo portátil basado en Arduino para registrar
-        frecuencia cardiaca y contar pasos en tiempo real mediante un sensor de pulso y un acelerómetro. Los datos se
-        enviaban por serie a Python y se mostraban en un pequeño dashboard programado en Spyder, donde se actualizaban
-        en tiempo real los valores de pulso y otras variables. Participé en la programación, la visualización de los
-        datos y las pruebas de funcionamiento del sistema.</p>
-      <p><strong>Tecnologías:</strong> C, Arduino, Spyder</p>
+      <h3 data-key="projects-title-8"></h3>
+      <p data-key="projects-text-8"></p>
+      <p><strong data-key="tech-label"></strong> C, Arduino, Spyder</p>
       <div class="imagenes-fila2">
         <img src="imagenes/bpm1.png" onclick="abrirImagen(this.src)" style="cursor:pointer;">
         <img src="imagenes/bpm2.png" onclick="abrirImagen(this.src)" style="cursor:pointer;">
@@ -397,7 +180,7 @@
       <a href="https://www.linkedin.com/in/nerea-gorrotxategi-vergara/"> LinkedIn </a>
     </p>
   </section>
-
+  <script src="script.js"></script>
 </body>
 
 </html>
